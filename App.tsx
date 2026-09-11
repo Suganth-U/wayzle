@@ -1,20 +1,22 @@
+import './global.css';
+import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { View } from 'react-native';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { MapContainer } from './src/components/map/MapContainer';
+import { DiscoverySheet } from './src/components/ui/DiscoverySheet';
+import { useLocation } from './src/hooks/useLocation';
 
 export default function App() {
+  useLocation();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView className="flex-1">
+      <View className="flex-1 bg-background">
+        <MapContainer />
+        <DiscoverySheet />
+        <StatusBar style="dark" />
+      </View>
+    </GestureHandlerRootView>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

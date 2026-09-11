@@ -1,12 +1,44 @@
 {
   "name": "wayzle",
   "version": "1.0.0",
-  "main": "index.ts",
+  "main": "expo-router/entry",
   "dependencies": {
+    "@expo/metro-runtime": "~57.0.15",
+    "@expo/vector-icons": "^15.1.1",
+    "@gorhom/bottom-sheet": "^5.2.14",
+    "@maplibre/maplibre-react-native": "^11.3.6",
+    "@react-native-async-storage/async-storage": "^3.1.1",
+    "@supabase/supabase-js": "^2.112.3",
+    "babel-preset-expo": "~57.0.0",
     "expo": "~57.0.13",
+    "expo-auth-session": "~57.0.7",
+    "expo-blur": "^57.0.2",
+    "expo-constants": "~57.0.11",
+    "expo-dev-client": "^57.0.12",
+    "expo-linking": "~57.0.6",
+    "expo-location": "^57.0.10",
+    "expo-router": "~57.0.13",
+    "expo-speech": "^57.0.1",
+    "expo-splash-screen": "~57.0.6",
     "expo-status-bar": "~57.0.1",
+    "expo-system-ui": "~57.0.2",
+    "expo-task-manager": "^57.0.10",
+    "expo-web-browser": "~57.0.2",
+    "maplibre-gl": "^6.8.0",
+    "moti": "^0.30.0",
+    "nativewind": "^4.2.6",
     "react": "19.2.3",
-    "react-native": "0.86.2"
+    "react-dom": "19.2.3",
+    "react-map-gl": "^8.1.3",
+    "react-native": "0.86.2",
+    "react-native-gesture-handler": "^3.2.1",
+    "react-native-reanimated": "^4.5.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-screens": "~4.26.0",
+    "react-native-url-polyfill": "^4.0.0",
+    "react-native-web": "^0.21.2",
+    "tailwindcss": "^3.4.19",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@types/react": "~19.2.2",
@@ -14,9 +46,11 @@
   },
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
-    "web": "expo start --web"
+    "android": "expo run:android",
+    "ios": "expo run:ios",
+    "web": "expo start --web",
+    "postinstall": "node scripts/patch-rnw.js"
   },
-  "private": true
+  "private": true,
+  "author": "Suganth"
 }

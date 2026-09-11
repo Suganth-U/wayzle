@@ -1,13 +1,18 @@
 {
   "expo": {
     "name": "Wayzle",
-    "slug": "Wayzle",
+    "slug": "wayzle",
+    "scheme": "wayzle",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.Wayzle",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -16,10 +21,31 @@
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.anonymous.Wayzle"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ae33868f-79b0-4334-8498-90d4f2934b22"
+      }
+    },
+    "owner": "suganthdzs-team",
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Allow Wayzle to use your location for background navigation and tracking.",
+          "isAndroidBackgroundLocationEnabled": true
+        }
+      ],
+      "@maplibre/maplibre-react-native",
+      "expo-splash-screen",
+      "expo-router",
+      "expo-web-browser"
+    ]
   }
 }
